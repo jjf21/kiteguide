@@ -1,2 +1,11 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+<div class='container'>
+  <%= simple_form_for @product, html: {id: "form-index"} do |f|%>
+    <%= f.input :brand_id, collection: Brand.all, prompt: "Choisissez la marque" %>
+    <%= f.input :model %>
+    <%= f.input :year %>
+    <%= f.input :gear_type, collection: ['Aile', 'Twin Tip', 'Surf', 'Foil', 'Harnais'], prompt: "Type de matos" %>
+    <% # f.input :type, ['Aile', 'Twin Tip', 'Surf', 'Foil', 'Harnais'] %>
+    <%= f.input :photo %>
+    <%= f.submit %>
+  <% end %>
+</div>
