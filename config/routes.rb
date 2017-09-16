@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :products, only: [:index, :show, :new, :create, :destroy]
+
+  resources :products, only: [:index, :new, :create, :destroy], path: 'matos'
+  
+  resources :brands , only: [:index], path: "gear/",  param: :name do  
+    resources :products, only: :show, path: ':year/:model/'
+  end
+
+  #/brand/year/model
 
   devise_for :users
   root to: 'pages#home'

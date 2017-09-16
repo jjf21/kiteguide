@@ -1,7 +1,5 @@
-<div class='container'>
-  <h1>Tous les kites</h1>
+
+  <h1 class="page-title">Tous les kites</h1>
+  <div class="separator-2"></div>
   <%= link_to 'Ajouter du matos', new_product_path %><br>
-  <% @products.each do |product| %>
-    <%= product.brand.name %> - <%= product.model %> <%= link_to '>', product_path(product) %><br>
-  <% end %>
-</div>
+  <%= render 'shared/products', products: @products %>
