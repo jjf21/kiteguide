@@ -1,0 +1,16 @@
+<div class="col-md-3 col-sm-6 isotope-item <%= product.gear_type.gsub(' ', '-') %>" style="position: absolute; left: 288px; top: 0px;">
+  <div class="image-box shadow bordered text-center mb-20">
+    <div class="overlay-container">
+      <%= cl_image_tag product.photo.url(:main_caroussel) %>
+      <div class="overlay-top">
+      </div>
+      <div class="overlay-bottom">
+        <h3>
+          <%= link_to brand_product_path(product.brand.name, product.year, product.model, product) do%> 
+            <%= product.model %> <%= product.year %>
+          <% end %>
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>

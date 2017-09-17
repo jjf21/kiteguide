@@ -1,10 +1,10 @@
 <div class="image-box style-2 mb-20 shadow bordered light-gray-bg text-center">
   <div class="overlay-container">
-    <img src="http://www.kiteboarder-mag.com/media/Guide_Matos/aile_kite/img_17/f_one_2017_bandit_blue_yellow_green_3_4_left.jpg" alt="">
+    <%= cl_image_tag product.photo.url(:main_caroussel) %>
   </div>
   <div class="body">
     <%= link_to brand_product_path(product.brand.name, product.year, product.model, product) do %>
-      <h3><%= product.brand.name.capitalize %> <%= product.model.capitalize %> <%= product.year %></h3>               
+      <h3><%= product.brand.name.capitalize %> <%= product.model %> <%= product.year %></h3>               
     <% end %>
   </div>
 </div>

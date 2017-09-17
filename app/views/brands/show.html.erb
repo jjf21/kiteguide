@@ -1,0 +1,27 @@
+<div class="main col-md-12">
+
+  <!-- page-title start -->
+  <!-- ================ -->
+  <h1 class="page-title"><%= @brand.name %></h1>
+  <div class="separator-2"></div>
+  <!-- page-title end -->
+  <p><%= @brand.description %></p>
+
+  <!-- isotope filters start -->
+  <div class="filters">
+    <ul class="nav nav-pills">
+      <li class="active"><a href="#" data-filter="*">Tout</a></li>
+      <% @filters.each do |filter| %>
+        <li><a href="#" data-filter=".<%= filter.gsub(' ', '-')%>"><%= filter %></a></li>
+      <% end %>
+    </ul>
+  </div>
+  <!-- isotope filters end -->
+
+  <div class="isotope-container row grid-space-10" style="display: block; position: relative; height: 385.344px;">
+    <% @brand.products.each do |product| %>
+      <%= render 'shared/product2', product: product %>
+    <% end %>
+  </div>
+
+</div>
