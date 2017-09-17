@@ -177,19 +177,19 @@ p.large {
 }
 
 a {
-  color: #09afdf;
+  color: $red;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
 a:hover {
-  color: #0c9ec7;
+  color: $red;
 }
 
 a:focus, a:active {
   outline: none;
-  color: #0c9ec7;
+  color: $red;
 }
 
 .link-dark {
@@ -272,7 +272,7 @@ blockquote.inline:after {
 
 mark,
 .mark {
-  background-color: #09afdf;
+  background-color: $red;
   color: #ffffff;
 }
 
@@ -288,7 +288,7 @@ pre {
 }
 
 .text-default {
-  color: #09afdf;
+  color: $red;
 }
 
 .text-white {

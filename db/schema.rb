@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170914195920) do
+ActiveRecord::Schema.define(version: 20170916155355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,14 +24,24 @@ ActiveRecord::Schema.define(version: 20170914195920) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "galleries", force: :cascade do |t|
+    t.string "photo"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_galleries_on_product_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.bigint "brand_id"
     t.string "model"
     t.string "gear_type"
     t.string "year"
     t.string "description"
-    t.string "photos"
+    t.string "photo"
     t.string "video"
+    t.string "programme"
+    t.string "min_level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
@@ -62,6 +72,7 @@ ActiveRecord::Schema.define(version: 20170914195920) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "galleries", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "sizes", "products"
 end
