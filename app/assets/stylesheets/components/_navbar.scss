@@ -1,5 +1,5 @@
 .header{
-  background: $orange;
+  background: $grey;
   border-top: none;
 }
 
@@ -31,8 +31,12 @@
   border: none;
 }
 
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: $red;
+}
+
 .fixed-header-on .header.fixed:not(.dark) {
-    background-color: rgba(241, 119, 52, 1);
+    background-color: $grey;
 }
 
 @media (min-width: 768px){
