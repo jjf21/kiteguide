@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.string :model
       t.string :gear_type
       t.string :year
-      t.string :description
+      t.text :description
       t.string :photo
       t.string :video
       t.string :programme

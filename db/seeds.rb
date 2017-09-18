@@ -7,6 +7,7 @@ User.destroy_all
 
 
 puts 'Seeding DB'
+carl = User.create!(email:'carl.quivron@gmail.com', password:'bestxx', password_confirmation:'bestxx')
 
 puts 'F-one'
 # BRAND
@@ -31,6 +32,8 @@ b.sizes.create!(size: 11)
 b.sizes.create!(size: 12)
 b.sizes.create!(size: 14)
 b.sizes.create!(size: 17)
+b.reviews.create!(user:carl, content:'Super Aile', rating:4)
+b.reviews.create!(user:carl, content:"Super session avec ce kite! Je conseil vraiment l'achat", rating:3)
 
 # WTF
 b = Product.create!(brand:a, min_level: 3, programme: 'wakestyle',video:"<iframe src='https://player.vimeo.com/video/230755012?color=00cc99' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",gear_type:'kite', remote_photo_url: "http://www.side-shore.com/images/produits/thickbox_default/p/66518/wtf-2018-nue-fone.jpg", model:'WTF?!', year: 2018, description: " La WTF!? est un tout nouveau kite F-ONE pour 2018 ; c’est une machine à tricks conçue pour gagner. Même son nom l’indique : Win The Freestyle !")
@@ -42,6 +45,8 @@ b.sizes.create!(size: 9)
 b.sizes.create!(size: 11)
 b.sizes.create!(size: 13)
 b.sizes.create!(size: 15)
+b.reviews.create!(user:carl, content:'Grosse Session Kiteloop', rating:4)
+b.reviews.create!(user:carl, content:'Top Slack !', rating:5)
 
 
 Product.create!(brand:a, gear_type:'twin tip' ,model:'Trax HDR', year: 2018, description: "Le shape et la construction de la F-One Trax HRD 2018 en font une des boards les plus performantes et confortables du marché! Petit Bonus, sa technologie Lite Tech (transparence du noyau) lui offre un look d'enfer!")
@@ -63,6 +68,6 @@ Product.create!(brand:a, gear_type:'surf' ,model:'Slice', year: 2018, descriptio
 # a = Brand.create!(name:'Slingshot')
 # Product.create!(brand:a, gear_type:'kite', model:'SST', year: 2018, description: "L'aile Slingshot SST 2018 est l'aile idéale pour le surf grâce à un positionnement plus central dans la fenêtre, un bridage court IRS qui offrent un drift exceptionnel, une réactivité excellente même avec une tension minimale dans les lignes et des transitions rapides dans les vagues.")
 
-User.new(email:'carl.quivron@gmail.com', password:'bestxx', password_confirmation:'bestxx')
+
 
 puts 'SEED complete'

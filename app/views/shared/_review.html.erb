@@ -3,12 +3,14 @@
     <img class="img-circle" src="https://image.flaticon.com/icons/png/512/78/78373.png" alt="avatar">
   </div>
   <header>
-    <h3>Amazing!</h3>
-    <div class="comment-meta"> <i class="fa fa-star text-default"></i> <i class="fa fa-star text-default"></i> <i class="fa fa-star text-default"></i> <i class="fa fa-star text-default"></i> <i class="fa fa-star"></i> | Today, 12:31</div>
+    <h3><%= review.user %></h3>
+    <div class="comment-meta">
+      <%= render 'shared/ranking_stars', rating: review.rating %> | Today, 12:31
+    </div>
   </header>
   <div class="comment-content">
     <div class="comment-body clearfix">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+      <p><%= review.content %> </p>
     </div>
   </div>
 </div>

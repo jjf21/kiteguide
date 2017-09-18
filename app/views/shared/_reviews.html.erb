@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="title">Reviews</h2>
+        <h2 class="title">Avis</h2>
         <div class="separator-2"></div>
         <!-- comments start -->
         <div class="comments margin-clear space-top">
           <!-- comment start -->
-          <% 5.times do %>
-            <%= render 'shared/review' %>
+          <% product.reviews.each do |review| %>
+            <%= render 'shared/review', review: review %>
           <% end %>
           <!-- comment end -->
         </div>
