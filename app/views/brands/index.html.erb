@@ -1,1 +1,10 @@
-hoooo
+<h1 class="page-title">Toutes les marques</h1>
+<div class="separator-2"></div>
+<div class="tab-content clear-style">
+  <div class="tab-pane active" id="pill-1">
+    <% @brands.each do |brand| %>
+      <%= render 'brands/brand_list', brand: brand %>
+      <div class="separator-3"></div>
+    <% end %>
+  </div>
+</div>
