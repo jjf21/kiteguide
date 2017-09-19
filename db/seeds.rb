@@ -1,13 +1,14 @@
 puts 'delete DB'
 Gallery.delete_all
 Size.delete_all
+Review.delete_all
 Product.destroy_all
 Brand.destroy_all
 User.destroy_all
 
 
 puts 'Seeding DB'
-carl = User.create!(email:'carl.quivron@gmail.com', password:'bestxx', password_confirmation:'bestxx')
+carl = User.create!(email:'carl.quivron@gmail.com', password:'bestxx', password_confirmation:'bestxx', height:'185', weight:'80', first_name:'Carl', last_name:'Quivron', kiting_since: 2004, level:'expert')
 
 puts 'F-one'
 # BRAND
