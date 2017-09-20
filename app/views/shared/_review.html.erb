@@ -3,9 +3,9 @@
     <img class="img-circle" src="https://image.flaticon.com/icons/png/512/78/78373.png" alt="avatar">
   </div>
   <header>
-    <h3><%= review.user %></h3>
+    <h3><%= review.user.first_name %> <%= review.user.last_name %></h3>
     <div class="comment-meta">
-      <%= render 'shared/ranking_stars', rating: review.rating %> | Today, 12:31
+      <%= render 'shared/ranking_stars', rating: review.rating %> | <%= review.user.level.capitalize %> - <%= review.user.weight %> kg - <%= review.user.height %> cm | <i><%= review.created_at.strftime("%e %B %Y") %></i>
     </div>
   </header>
   <div class="comment-content">
